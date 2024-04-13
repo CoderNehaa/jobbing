@@ -1,0 +1,33 @@
+<!-- Displays all available job postings -->
+<h1 class="my-4"> All available job postings </h1>
+
+<% if(jobs.length){ %>
+    <div class="d-flex flex-wrap justify-content-evenly">
+<% jobs.forEach(job=>{ %>
+<div class="card col-5 m-3">
+    <div class="card-body">
+      <h6 class="card-title"><%= job.jobdesignation %></h6>
+      <h5 class="card-subtitle my-2"> <%=job.companyname %></h5>
+      <p class="card-text">
+        <strong>Mandatory Skills:</strong> 
+        <% job.skills.forEach(skill => { %>
+            <span> <%=skill %>, </span>
+        <%})%>
+    </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">location: <%= job.jobloction %></li>
+      <li class="list-group-item">Salary: <%= job.salary %></li>
+      <li class="list-group-item">Number of applicants :<%=job.applicants.length %></li>
+      <li class="list-group-item">Last date to apply:<%= job.applyby%></li>
+      <li class="list-group-item">Number of opening : <%= job.numberofopenings %></li>
+    </ul>
+    <div class="card-body">
+        <a class="btn btn-primary" href="/apply/<%= job.id %>">Apply</a>
+        <a class="btn btn-primary" href="/jobs/<%= job.id %>">Check Details</a>
+    </div> 
+  </div>
+  <%})%>
+</div>
+  <%}%>
+  

@@ -1,0 +1,13 @@
+nodemailer to send confirmation emails to job seekers after applying for job,
+multer for uploading resume while applying for job,
+EJS(embedded JS) = EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. 
+express-session = Create a session middleware with the given options.
+
+
+
+modal = Recruiter register
+page = recruiter login, postjob, alljobs for recruiter and applicant both,
+
+
+After recruiter login, his name appears in navbar = 2 option(logout, post new job)
+All jobs,

@@ -1,0 +1,29 @@
+<h1> Apply for a job </h1>
+
+<form action="/apply/:id" method="post" enctype="multipart/form-data">
+  <!-- input id -->
+  <input type="text" class="form-control" id="jobId" name="jobId" aria-describedby="nameInputInfo" value="<%= jobId%>" hidden>
+
+  <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" aria-describedby="nameInputInfo" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="contact" class="form-label">Contact</label>
+    <input type="number" class="form-control" id="contact" name="contact" required>
+  </div>
+  
+  <div class="mb-3">
+      <label for="resume" class="form-label">Resume</label>
+      <input type="file" class="form-control" id="resume" name="resume" required />
+  </div>
+
+  <button type="submit" class="btn btn-primary me-3">Apply</button>
+  <a href="/jobs" class="btn btn-warning">Back to all jobs</a>
+</form>

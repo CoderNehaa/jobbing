@@ -1,0 +1,79 @@
+<!--shows detailed informationn about a specific job -->
+
+<div class="d-flex mt-4">
+    <% if(job){ %>
+    <div class="bg-light col-8 me-4">
+        <h1 class="mb-4"> Get Job Details </h1>
+        <table class="table table-striped">
+            <tr>
+                <th> Designation</th>
+                <td><%= job.jobdesignation%></td>
+            </tr>   
+            <tr>
+                <th> Company</th>
+                <td><%= job.companyname%></td>
+            </tr>
+            <tr>
+                <th> Department</th>
+                <td><%= job.jobcategory%></td>
+            </tr>
+            <tr>
+                <th> Job posted on</th>
+                <td><%= job.jobposted%></td>
+            </tr>
+            <tr>
+                <th> Last date to apply</th>
+                <td><%= job.applyby%></td>
+            </tr>
+            <tr>
+                <th> Number of openings</th>
+                <td><%= job.numberofopenings%></td>
+            </tr>
+            <tr>
+                <th> Total applicants</th>
+                <td><%= job.applicants.length%></td>
+            </tr>
+            <tr>
+                <th> Skills</th>
+                <td>
+                    <% job.skills.forEach((skill, index) => { %>
+                        <%= skill%>,
+                    <%})%>
+                </td>
+            </tr>
+            <tr>
+                <th> Location</th>
+                <td><%= job.jobloction %></td>
+            </tr>
+            <tr>
+                <th> Experience Required</th>
+                <td><%=job.experiencerequired%> months</td>
+            </tr>
+            <tr>
+                <th> Salary</th>
+                <td><%= job.salary %></td>
+            </tr>
+        </table>
+        <a href="/apply/<%=job.id%>" class="btn btn-primary me-2">Apply</a>
+        <a href="/jobs" class="btn btn-warning">Back to all jobs</a>
+    </div>
+
+    <div class="col-4 bg-secondary-lighter mt-4 mb-2">
+        <h3> Other Jobs </h3>
+        <% otherJobs.forEach((otherJob) => { %>
+            <div class="card mb-3 p-2">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Designation: <%= otherJob.jobdesignation %></li>
+                    <li class="list-group-item">Company: <%= otherJob.companyname %></li>
+                    <li class="list-group-item">Last date to apply:<%= otherJob.applyby%></li>
+                    <li class="list-group-item">Number of opening : <%= otherJob.numberofopenings %></li>
+                </ul>
+                <div class="card-body">
+                    <a class="btn btn-primary" href="/apply/<%= otherJob.id %>">Apply</a>
+                    <a class="btn btn-primary" href="/jobs/<%= otherJob.id %>">Check Details</a>
+                </div> 
+            </div>            
+        <%})%>
+    </div>
+    <%}%>
+</div>

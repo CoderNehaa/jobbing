@@ -1,0 +1,24 @@
+<!-- Allows recruitters to login to their accounts -->
+<h1 class="mb-5 mt-3"> Login as recruiter </h1>
+
+<% if(errorMsg){ %>
+  <div class="alert alert-danger" role="alert">
+    <%= errorMsg %>
+  </div>
+<% } %>
+
+<form action="/login" method="post">
+  <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+ <p class="my-4">Don't have an account?<a href="/register"> Register. </a></p>
+
+ 
